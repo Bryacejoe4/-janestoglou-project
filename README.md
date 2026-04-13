@@ -148,4 +148,4 @@ RUST_LOG=warn ./target/release/botx run
 
 ## Disclaimer
 
-This software is provided for educational purposes. Automated trading carries significant financial risk. The authors are not responsible for any financial losses. Always test with small amounts first.
+The authors are not responsible for any financial losses. Always test with small amounts first.
