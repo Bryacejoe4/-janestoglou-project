@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  solana-hft-botx  ·  default.toml
+#  All values here are overridden by .env or CLI flags.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[strategy]
+# 50 / 50 split entry instead of a single buy
+entry_split            = true
+# % dip after first entry that triggers the second entry (0.25 = 25 %)
+second_entry_dip_pct   = 0.25
+# Maximum number of entries per token
+max_entries_per_token  = 2
+# Take-profit target (0.25 = 25 %)
+take_profit_pct        = 0.25
+# Stop-loss target   (0.12 = 12 %)
+stop_loss_pct          = 0.12
+# Moonbag – keep this % of position after TP
+moonbag_pct            = 0.10
+# Trailing-stop distance from peak (0.08 = 8 %)
+trailing_stop_pct      = 0.08
+# Slippage in basis-points (100 = 1 %)
+slippage_bps           = 200
+# Priority fee in micro-lamports per CU
+priority_fee_micro_lamports = 100_000
+# Max retries on failed tx
+max_retries            = 3
+
+[risk]
+# Maximum % of total wallet balance to put in one trade
+max_position_pct        = 0.15
+# Auto-pause if daily losses exceed this fraction of starting balance
+daily_loss_limit_pct    = 0.10
+# Hard cap in SOL-lamports per individual trade  (0.5 SOL default)
+max_sol_per_trade       = 500_000_000
+
+[sniper]
+enabled                = true
+# Minimum SOL in pool before we enter (in lamports, 5 SOL default)
+min_liquidity_lamports = 5_000_000_000
+# Reject if fresh-wallet holders exceed this fraction (0.30 = 30 %)
+max_fresh_wallet_pct   = 0.30
+# Reject if detected sniper/bundle % exceeds this
+max_sniper_bundle_pct  = 0.15
+# How much SOL to spend on a snipe (in lamports, 0.1 SOL default)
+buy_amount_lamports    = 100_000_000
+# Minimum $ volume in first 5 minutes before we consider entering
+min_volume_usd         = 30_000.0
+
+[copy_trade]
+enabled           = false
+# Comma-separated list of wallet addresses to mirror
+watched_wallets   = []
+# Size of mirror trade as a fraction of the original (0.5 = half-size)
+trade_size_pct    = 0.50
+
+[jito]
+enabled        = true
+# Tip in lamports sent to the Jito tip account (0.015 SOL default)
+tip_lamports   = 15_000_000

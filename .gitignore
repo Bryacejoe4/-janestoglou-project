@@ -1,0 +1,23 @@
+# ── Secrets (NEVER commit these) ──────────────────────────────────────────────
+.env
+.env.*
+.env.*
+*.key
+*.pem
+keypair.json
+wallets.json
+
+# ── Rust build artifacts ───────────────────────────────────────────────────────
+/target/
+Cargo.lock   # Remove this line if you want reproducible builds (recommended for binaries)
+
+# ── IDE / OS ───────────────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Logs ────────────────────────────────────────────────────────────────────────
+*.log
+logs/
